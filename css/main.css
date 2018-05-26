@@ -1,0 +1,193 @@
+@charset "UTF-8";
+body, input, button {
+  font-family: 'Roboto', sans-serif;
+  background-color: #FAFAFA;
+  display: flex;
+  justify-content: center; }
+
+.noFill {
+  fill: none; }
+
+.container {
+  width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f7;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 20%;
+  border-radius: 15px; }
+  .container header {
+    width: 100%;
+    height: auto;
+    background: #149FD1;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    z-index: 5;
+    padding: 15px;
+    box-sizing: border-box; }
+    .container header input {
+      width: 100%;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.2);
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      border: 0px;
+      box-shadow: none;
+      color: #fff;
+      font-weight: 400;
+      outline: none;
+      padding: 0 60px 0 18px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -moz-appearance: none; }
+      .container header input::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.75); }
+      .container header input:-moz-placeholder {
+        color: rgba(255, 255, 255, 0.75); }
+      .container header input::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.75); }
+      .container header input:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.75); }
+    .container header button {
+      width: 50px;
+      height: 50px;
+      border: 0px;
+      box-shadow: none;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      outline: none;
+      padding: 0;
+      border-radius: 25px;
+      position: absolute;
+      right: 15px;
+      z-index: 6;
+      transition: all 0.1s ease-in-out; }
+      .container header button svg {
+        width: 16px;
+        height: 16px; }
+        .container header button svg .fill {
+          fill: #149FD1; }
+      .container header button:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 2px solid #fff;
+        box-sizing: border-box; }
+      .container header button:hover svg .fill {
+        fill: #fff; }
+  .container .todos {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 5px; }
+    .container .todos#completed li .buttons button.complete svg {
+      background: #149FD1;
+      border: 0px; }
+      .container .todos#completed li .buttons button.complete svg .fill {
+        fill: #fff; }
+    .container .todos:not(#completed) li .buttons button.complete:hover svg {
+      background: rgba(20, 159, 209, 0.5); }
+      .container .todos:not(#completed) li .buttons button.complete:hover svg .fill {
+        fill: #fff; }
+    .container .todos#completed {
+      position: relative;
+      padding: 60px 0 0 0;
+      opacity: 0.7; }
+      .container .todos#completed:empty::after {
+        content: 'Henüz tamamlanmış görev yok.'; }
+    .container .todos#completed::before {
+      content: '';
+      width: 80%;
+      height: 1px;
+      background: #d3d3d3;
+      position: absolute;
+      top: 12%;
+      left: 50%;
+      margin: 0 0 0 -40%; }
+    .container .todos#todo:empty::after {
+      content: 'Yapılacak görev yok.';
+      margin: 15px 0 0 0; }
+    .container .todos#todo::after, .container .todos#completed::after {
+      width: 100%;
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      color: #aaa; }
+    .container .todos li {
+      width: 100%;
+      height: 50px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      margin-bottom: 10px;
+      color: #444;
+      font-size: 14px;
+      text-indent: 18px; }
+      .container .todos li:last-of-type {
+        margin-bottom: 0; }
+      .container .todos li .buttons {
+        width: 100px;
+        height: 50px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center; }
+        .container .todos li .buttons button {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 50px;
+          height: 50px;
+          background: none;
+          border: 0px;
+          box-shadow: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          -moz-appearance: none; }
+          .container .todos li .buttons button svg {
+            width: 22px;
+            height: 22px; }
+          .container .todos li .buttons button.remove svg .fill {
+            fill: #bbbbbb;
+            -webkit-transition: fill 0.2s ease;
+            -moz-transition: fill 0.2s ease;
+            -ms-transition: fill 0.2s ease;
+            -o-transition: fill 0.2s ease;
+            transition: fill 0.2s ease; }
+          .container .todos li .buttons button.remove:hover svg .fill {
+            fill: #e85656; }
+          .container .todos li .buttons button.complete svg {
+            border: 1.5px solid #149FD1;
+            border-radius: 16px;
+            -webkit-transition: background 0.2s ease;
+            -moz-transition: background 0.2s ease;
+            -ms-transition: background 0.2s ease;
+            -o-transition: background 0.2s ease;
+            transition: background 0.2s ease; }
+            .container .todos li .buttons button.complete svg .fill {
+              fill: #149FD1; }
+        .container .todos li .buttons .seperate {
+          width: 1.5px;
+          height: 30px;
+          background: #D1D1D1; }
+
+/*# sourceMappingURL=main.css.map */
